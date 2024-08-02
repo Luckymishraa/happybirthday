@@ -1,0 +1,179 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff4081, #ff80ab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative; /* To position the text absolutely */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.6); /* Transparent white */
+    padding: 40px; /* Adjusted padding */
+    border-radius: 15px; /* Slightly more rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 800px; /* Increased max width */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border to enhance glass effect */
+    position: relative; /* For positioning text */
+}
+
+.title {
+    font-family: 'Caveat', cursive;
+    color: #d32f2f;
+    font-size: 4em;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(211, 47, 47, 0.5);
+}
+
+.animated-title {
+    opacity: 0;
+    animation: fadeInGlow 2s forwards, glow 1s infinite alternate;
+}
+
+@keyframes fadeInGlow {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 0 0 10px rgba(211, 47, 47, 1), 0 0 20px rgba(211, 47, 47, 0.5);
+    }
+}
+
+.animated-wish {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #f06292;
+    opacity: 0;
+    animation: fadeIn 2s forwards, scaleUp 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.photos img {
+    width: 100%;
+    height: 200px; /* Increased height */
+    object-fit: cover;
+    border-radius: 50%; /* Circle shape */
+    position: relative; /* For the pseudo-element */
+    z-index: 1; /* Ensure image is above the pseudo-element */
+    border: 5px solid #ff4081; /* Initial border color */
+    box-shadow: 0 0 20px rgba(255, 64, 129, 1), 0 0 30px rgba(255, 64, 129, 0.7);
+}
+
+.video {
+    margin: 20px 0;
+    max-width: 250px; /* Reduced maximum width */
+    margin: 0 auto; /* Center the video container */
+   
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #ff4081;
+    border-radius: 25px;
+}
+
+
+button {
+    padding: 10px 20px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+.message {
+    font-size: 1.2em;
+    color: #d32f2f;
+}
+
+/* Text positioning */
+.happy-text {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-family: 'Caveat', cursive;
+    font-size: 5em; /* Increased size */
+    color: #d32f2f;
+    z-index: 0;
+    animation: floatUpDown 4s ease-in-out infinite, glowText 1.5s alternate infinite;
+    display: flex;
+    flex-direction: column; /* Arrange letters in a column */
+    align-items: center; /* Center align the letters */
+}
+
+.birthday-text {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    font-family: 'Caveat', cursive;
+    font-size: 5em; /* Increased size */
+    color: #d32f2f;
+    z-index: 0;
+    animation: floatUpDown 4s ease-in-out infinite, glowText 1.5s alternate infinite;
+    display: flex;
+    flex-direction: column; /* Arrange letters in a column */
+    align-items: center; /* Center align the letters */
+}
+
+/* Individual letters */
+.happy-text span, .birthday-text span {
+    display: block; /* Display each letter on a new line */
+    line-height: 1.2; /* Adjust line height for spacing */
+}
+
+/* Animation for smooth up and down motion */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(-10%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(211, 47, 47, 1);
+    }
+}
+
